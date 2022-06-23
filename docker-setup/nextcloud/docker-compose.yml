@@ -1,0 +1,30 @@
+---
+version: "2"
+services:
+  nextcloud:
+    image: lscr.io/linuxserver/nextcloud:latest
+    container_name: nextcloud
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+    volumes:
+      - /host/path/to/config:/config
+      - /host/path/to/data:/data
+    restart: unless-stopped
+    depends_on:
+      - nextcloud_db
+  nextcloud_db:
+    image: lscr.io/linuxserver/mariadb:latest
+    container_name: nextcloud-db
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MYSQL_ROOT_PASSWORD=<root pass>
+      - TZ=Europe/Berlin
+      - MYSQL_DATABASE=<db name>
+      - MYSQL_USER=<user>
+      - MYSQL_PASSWORD=<password>
+    volumes:
+      - /host/path/to/db:/config
+    restart: unless-stopped

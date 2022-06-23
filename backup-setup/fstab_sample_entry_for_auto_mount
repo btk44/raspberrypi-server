@@ -1,0 +1,1 @@
+UUID=8F6B-33F5        /path/to/mounting/point   vfat    auto,nofail,noatime,rw,user     0       0
