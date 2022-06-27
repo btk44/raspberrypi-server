@@ -9,7 +9,7 @@ Since I wanted to forward only one port through my router (it is the easiest way
 
 > image will be here soon 
 
-## Setup
+## Setup - list of content
 
 This setup will cover:
 * installing operating system and accessing it via ssh
@@ -19,3 +19,14 @@ This setup will cover:
 * installing wireguard client on ubuntu/debian and connecting to the server
 * setting up automatic backup using crontab and rsync (+ fstab mounting option)
 * description of issues that occured during the setup 
+
+### - installing operating system
+For the installation I used Raspberry Pi Imager available here: [link](https://www.raspberrypi.com/software/)
+It lets choose OS you want and setup some general options like hostname, user, wifi connection, SSH, etc. (see cog wheel for settings). For my Raspberry:
+* select Raspbery Pi OS (other) -> Raspberry Pi OS Lite (64-bit)
+* in settings:
+  * set hostname - to be able to connect to RPi using its name instead of IP address
+  * enable SSH using password authentication
+  * set username and password 
+  * enable wifi (optional - you can always disable it later) 
+* instead of using sd card that was added to RPi I installed system on external SSD 2.5" drive and connected it to USB3 port (yes, that works!)
