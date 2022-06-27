@@ -30,3 +30,12 @@ It lets choose OS you want and setup some general options like hostname, user, w
   * set username and password 
   * enable wifi (optional - you can always disable it later) 
 * instead of using sd card that was added to RPi I installed system on external SSD 2.5" drive and connected it to USB3 port (yes, that works!)
+
+Now to connect via SSH you need to know your RPi's IP address or in case setting hostname worked you can use the name.
+* open terminal / cmd window in your (other) computer
+* type ssh your_username_from_settings@your_hostname_from_settings and hit enter
+* in case hostname is not working you have to check RPi's IP by:
+  * checking it in your router (usually this is available in web browser going to address 192.168.1.1)
+  * connecting RPi to external monitor and type `ip addr show`
+
+Done!
