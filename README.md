@@ -39,3 +39,5 @@ Now to connect via SSH you need to know your RPi's IP address or in case setting
   * connecting RPi to external monitor and type `ip addr show`
 
 Done!
+
+June 27 2022 - to be continued... tomorrow 😉
