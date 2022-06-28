@@ -40,4 +40,25 @@ Now to connect via SSH you need to know your RPi's IP address or in case setting
 
 Done!
 
-June 27 2022 - to be continued... tomorrow 😉
+### - installing docker and portainer
+This is the point where I must recommend [pi-histed project](https://github.com/novaspirit/pi-hosted). There is a lot of information about running self-hosted applications. 
+
+To install docker and portainer just run scripts from docker-setup directory (they are just copies from pi-hosted):
+```
+cd docker-setup
+./install_docker.sh
+```
+ 
+Now log off or reboot to apply user group changes. Then:
+```
+cd docker-setup
+./install_portainer.sh
+./update_portainer.sh
+```
+
+After this you should be able to access portainer through your web browser. Go to:
+```
+http://your_hostname_from_settings:9000/ or http://your_RPi_ip_address:9000/
+```
+
+June 28 2022 - to be continued... tomorrow 😉
