@@ -61,6 +61,7 @@ After this you should be able to access portainer through your web browser. Go t
 http://your_hostname_from_settings:9000/ or http://your_RPi_ip_address:9000/
 ```
 ### - installing docker containers
+#### wireguard
 We will start with wireguard container. To be able to create docker container we need to install docker-compose:
 ```
 sudo apt-get install docker-compose -y
@@ -80,9 +81,20 @@ id your_user_name -> this will list you UID and GID
 
 Now go to terminal and enter docker-setup/wireguard directory. Run command:
 ```
-docker-sompose up -d
+docker-compose up -d
 ```
 
 The container should be up and running and in the config directory you provided you should find client certificates (peer1, peer2, etc.). You can check if container is up through portainer web interface.
+
+#### nextcloud
+There is a container called nextcloudpi, but in my case it was breaking all the time. That is why I recommend running classic nextcloud container. 
+Go to docker-setup/nextcloud and edit docker-compose.yml file:
+* container_name -> put your container name. This will be used to access nextcloud via browser, i.e. `https://my_nextcloud_container_name/`
+* PUID, PGID and TZ should be filled like in wireguard container
+* in volumes section replace `/host/path/to/config` and `/host/path/to/data` with paths you want to use. Data path is the directory where all your files will be stored. (-- add troubleshooting winh .ocdata file --)
+* set values for: `MYSQL_ROOT_PASSWORD`, `MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD` - they will be needed when you first run nextcloud in browser and you will connect to the database
+* in volumes section replace `/host/path/to/db` with correct path you want to store db
+
+Important note! There are no ports exposed for the nextcloud - it is made on purpose because we want to access the container directly from custom network that will be accessible through VPN connection.
 
 June 29 2022 - to be continued... tomorrow 😉
