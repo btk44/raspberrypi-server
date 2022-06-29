@@ -97,4 +97,9 @@ Go to docker-setup/nextcloud and edit docker-compose.yml file:
 
 Important note! There are no ports exposed for the nextcloud - it is made on purpose because we want to access the container directly from custom network that will be accessible through VPN connection.
 
+Now go to terminal and enter docker-setup/nextcloud directory. Run command:
+```
+docker-compose up -d
+```
+
 June 29 2022 - to be continued... tomorrow 😉
