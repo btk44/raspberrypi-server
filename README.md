@@ -60,5 +60,29 @@ After this you should be able to access portainer through your web browser. Go t
 ```
 http://your_hostname_from_settings:9000/ or http://your_RPi_ip_address:9000/
 ```
+### - installing docker containers
+We will start with wireguard container. To be able to create docker container we need to install docker-compose:
+```
+sudo apt-get install docker-compose -y
+```
 
-June 28 2022 - to be continued... tomorrow 😉
+Now go to docker-setup/wireguard and edit docker-compose.yml file:
+* container_name -> put the name you want 
+* PUID and PGID -> put your user id and group id here. If you don't know the numbers use these commands:
+```
+whoami -> this will give you your_user_name
+id your_user_name -> this will list you UID and GID
+```
+* TZ -> your timezone
+* SERVERURL -> if you want the server acessible via local network only then use your RPi local ip address (192.168.?.?), if from outside use your external ip or ddns url (this requires router port forwarding and setting up ddns if your external ip is changing - more on that later?)
+* PEERS -> the number of certificates for clients you want to generate
+* in volume section replace `/host/path/to/wireguard/config' with path you want to use to store configuration (client certs will be there)
+
+Now go to terminal and enter docker-setup/wireguard directory. Run command:
+```
+docker-sompose up -d
+```
+
+The container should be up and running and in the config directory you provided you should find client certificates (peer1, peer2, etc.). You can check if container is up through portainer web interface.
+
+June 29 2022 - to be continued... tomorrow 😉
