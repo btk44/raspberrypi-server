@@ -102,4 +102,7 @@ Now go to terminal and enter docker-setup/nextcloud directory. Run command:
 docker-compose up -d
 ```
 
-June 29 2022 - to be continued... tomorrow 😉
+### samba
+
+
+June 30 2022 - to be continued... tomorrow 😉
