@@ -1,6 +1,6 @@
 # System preparation
-Note: Used system: Ubuntu (Debian)
-Note: all scripts are pointing to directory ~/server-setup - copy this folder to your home or modify scripts to use other directory
+* Note: Used system: Ubuntu (Debian)
+* Note: all scripts are pointing to directory ~/server-setup - copy this folder to your home or modify scripts to use other directory
 
 ## files:
 
@@ -25,3 +25,5 @@ Run script to install Pimoroni Fan service - if you're using the same fan
 ```
 sh 03-fan-install.sh
 ```
+
+Now go to: [docker-setup](https://github.com/btk44/raspberrypi-server/tree/main/docker-setup)
