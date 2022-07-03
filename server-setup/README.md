@@ -1,6 +1,6 @@
 # System preparation
-### - installing operating system
-For the installation use Raspberry Pi Imager available here: [link](https://www.raspberrypi.com/software/)
+### installing operating system:
+For the installation use Raspberry Pi Imager available here: [link](https://www.raspberrypi.com/software/).
 It lets choose OS you want and setup some general options like hostname, user, wifi connection, SSH, etc. After running Imager on your machine (not RPi):
 * select Raspbery Pi OS (other) -> Raspberry Pi OS Lite (64-bit)
 * in settings (little cog wheel icon in bottom right corner):
