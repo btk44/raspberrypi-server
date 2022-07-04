@@ -12,15 +12,17 @@ Since I wanted to forward only one port through my router (it is the easiest way
 ## Setup - list of content
 
 This setup will cover:
-* installing operating system and accessing it via ssh
-* installing docker
-* installing docker containers: portainer, nextcloud, wireguard, samba - using docker-compose and installing with portainer
-* setting up a custom bridge network to access containers only through VPN connection
-* installing wireguard client on ubuntu/debian and connecting to the server
-* setting up automatic backup using crontab and rsync (+ fstab mounting option)
-* description of issues that occured during the setup 
+* :arrow_right: [server setup](https://github.com/btk44/raspberrypi-server/tree/main/server-setup)
+  * installing operating system and accessing it via ssh
+  * description of issues that occured during the setup
+* :arrow_right: [docker setup](https://github.com/btk44/raspberrypi-server/tree/main/docker-setup)
+  * installing docker
+  * installing docker containers: portainer, nextcloud, wireguard, samba - using docker-compose and installing with portainer
+  * setting up a custom bridge network to access containers only through VPN connection
+  * installing wireguard client on ubuntu/debian and connecting to the server
+  * description of issues that occured during the setup
+* :arrow_right: [backup setup](https://github.com/btk44/raspberrypi-server/tree/main/backup-setup)
+  * setting up automatic backup using crontab and rsync (+ fstab mounting option)
+  * description of issues that occured during the usage
 
-### First step: [server setup](https://github.com/btk44/raspberrypi-server/tree/main/server-setup) 
-### Second step: [docker setup](https://github.com/btk44/raspberrypi-server/tree/main/docker-setup)
-
-July 03 2022 - to be continued... tomorrow 😉
+July 07 2022 - to be continued... tomorrow 😉
