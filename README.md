@@ -7,7 +7,8 @@ The goal of this project is to prepare a home server using Raspberry Pi 4B compu
 ## Architecture
 Since I wanted to forward only one port through my router (it is the easiest way to access your server from outside networks) I decided to use VPN gateway. That is why I connected all app containers into my custom bridge network and acces it (the network) through VPN container. More on that later. 
 
-> image will be here soon 
+<img src="https://github.com/btk44/raspberrypi-server/blob/main/diagram.png" alt="architecture" width="700"/>
+image explanaton soon...
 
 ## Setup - list of content
 
