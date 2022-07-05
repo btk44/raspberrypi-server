@@ -28,4 +28,4 @@ This setup will cover:
   * setting up automatic backup using crontab and rsync (+ fstab mounting option)
   * description of issues that occured during the usage
 
-July 07 2022 - to be continued... tomorrow 😉
+July 08 2022 - to be continued... tomorrow 😉
