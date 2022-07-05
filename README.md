@@ -5,10 +5,12 @@
 The goal of this project is to prepare a home server using Raspberry Pi 4B computer. I decided to run everything using docker so all the apps I would use there would be contenerized (self-hosted). The server will have two disks - one for the operating system and keeping data and the second just for making backup. 
 
 ## Architecture
-Since I wanted to forward only one port through my router (it is the easiest way to access your server from outside networks) I decided to use VPN gateway. That is why I connected all app containers into my custom bridge network and acces it (the network) through VPN container. More on that later. 
+Since I wanted to forward only one port through my router (it is the easiest way to access your server from outside networks) I decided to use VPN gateway. That is why I connected all app containers into my custom bridge network and acces it (the network) through VPN container. 
 
 <img src="https://github.com/btk44/raspberrypi-server/blob/main/diagram.png" alt="architecture" width="700"/>
-image explanaton soon...
+As you can see in the picture there is only one port forwarded in my `router`. It will forward all requests to RPi VPN port and they will go through `wireguard container`. When the PC (local or not) has successful VPN connection then it will access `custom bridge network` and will be able to call all containers by theirs names, i.e. `http://nextcloud_container_name:443`. There is no other way to access those containers since they are not exposing any ports (see X symbol).
+
+The only container that is exposing a port is portainer. I left it exposed to be able to connect from local network in case wireguard container is broken. I'll be able to look into containers without using ssh.
 
 ## Setup - list of content
 
