@@ -3,7 +3,7 @@ version: "2"
 services:
   nextcloud:
     image: lscr.io/linuxserver/nextcloud:latest
-    container_name: nextcloud
+    container_name: rpi-nextcloud
     environment:
       - PUID=1000
       - PGID=1000
@@ -13,10 +13,10 @@ services:
       - /host/path/to/data:/data
     restart: unless-stopped
     depends_on:
-      - nextcloud_db
+      - rpi-nextcloud-db
   nextcloud_db:
     image: lscr.io/linuxserver/mariadb:latest
-    container_name: nextcloud-db
+    container_name: rpi-nextcloud-db
     environment:
       - PUID=1000
       - PGID=1000
@@ -28,3 +28,7 @@ services:
     volumes:
       - /host/path/to/db:/config
     restart: unless-stopped
+networks:
+  default:
+    name: vpn-network
+    external: true
