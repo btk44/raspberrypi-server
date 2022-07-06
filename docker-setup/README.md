@@ -28,7 +28,10 @@ To be able to install containers via compose files run command:
 sudo apt-get install docker-compose -y
 ```
 ### setup custom bridge network
---- coming soon ---
+Before running containers creation you need to create custom bridge network. To keep it simple run:
+```
+docker network create --driver=bridge vpn-network
+```
 
 ### wireguard
 Go to wireguard directory and edit docker-compose.yml (use vim or nano):
