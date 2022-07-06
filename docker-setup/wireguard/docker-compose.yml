@@ -2,7 +2,7 @@ version: "2.1"
 services:
   wireguard:
     image: linuxserver/wireguard
-    container_name: wireguard
+    container_name: rpi-wireguard
     cap_add:
       - NET_ADMIN
       - SYS_MODULE
