@@ -13,7 +13,7 @@ services:
       - /host/path/to/data:/data
     restart: unless-stopped
     depends_on:
-      - rpi-nextcloud-db
+      - nextcloud_db
   nextcloud_db:
     image: lscr.io/linuxserver/mariadb:latest
     container_name: rpi-nextcloud-db
