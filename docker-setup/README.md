@@ -89,12 +89,13 @@ https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/template/portainer-
 ```
 This is a link from [pi-hosted](https://github.com/novaspirit/pi-hosted) repository that will provide ready container templates ready for deployment. Click <b>Save settings</b> and now go to App Templates (in left panel menu). You can read the list of available containers there, but for now type <b>samba</b> in the search field. Then select the template that will show up - this should take you to setup screen:
 ![image](https://user-images.githubusercontent.com/97596263/177945212-fbab260d-2369-4d46-9e14-40513f8bf9a9.png)
+
 Now you need to configure it:
 * Name: put your container name here i.e. rpi-samba
 * Network: select the network that was created before via terminal (vpn-network)
 * PUID, USERID, GROUPID: should be the same as in nextcloud and wireguard containers
 * USER: provide credentials to access your shared folder from other computers. Format is user_name;password - remember that the separator must be semicolon (;)
-* SHARE: provide the name you want to see in your network and access rules. Final format should look like this: `name_of_folder_in_your_network;/share;yes;no;yes;user_name_from_USER_field`. Access flags are: browsable(yes);read only(no);guest access(yes) if you'd like to set them differently.
+* SHARE: provide the name you want to see in your network and access rules. Final format should look like this: `name_of_folder_in_your_network;/share;yes;no;yes;user_name_from_USER_field`. Access flags are: `browsable(yes);read only(no);guest access(yes)` if you'd like to set them differently.
 
 Once it is done click on <b>Show advanced options</b> and remove all port mappings (if you want to access container only through VPN). Next set the path to the directory that you want to share in <b>Volume mapping</b> host field.
 
