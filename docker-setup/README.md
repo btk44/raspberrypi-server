@@ -78,3 +78,32 @@ docker-compose up -d
 ```
 
 ### samba
+This container will be installed using portainer to see how we can make setup manually.
+In your webbrowser go to:
+```
+http://your_hostname_from_settings:9000/ or http://your_RPi_ip_address:9000/
+```
+On the left menu click <b>Home</b>. You should see list of environments. Select <b>local</b> environment. Then click on <b>containers</b> - this should take you to the list of all containers that are running in your docker. In left panel menu select <b>Settings</b> and after the page is loaded in <b>App Templates</b> section paste this url:
+```
+https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/template/portainer-v2-arm64.json
+```
+This is a link from [pi-hosted](https://github.com/novaspirit/pi-hosted) repository that will provide ready container templates ready for deployment. Click <b>Save settings</b> and now go to App Templates (in left panel menu). You can read the list of available containers there, but for now type <b>samba</b> in the search field. Then select the template that will show up - this should take you to setup screen:
+![image](https://user-images.githubusercontent.com/97596263/177945212-fbab260d-2369-4d46-9e14-40513f8bf9a9.png)
+Now you need to configure it:
+* Name: put your container name here i.e. rpi-samba
+* Network: select the network that was created before via terminal (vpn-network)
+* PUID, USERID, GROUPID: should be the same as in nextcloud and wireguard containers
+* USER: provide credentials to access your shared folder from other computers. Format is user_name;password - remember that the separator must be semicolon (;)
+* SHARE: provide the name you want to see in your network and access rules. Final format should look like this: `name_of_folder_in_your_network;/share;yes;no;yes;user_name_from_USER_field`. Access flags are: browsable(yes);read only(no);guest access(yes) if you'd like to set them differently.
+
+Once it is done click on <b>Show advanced options</b> and remove all port mappings (if you want to access container only through VPN). Next set the path to the directory that you want to share in <b>Volume mapping</b> host field.
+
+Now you can click <b>Deploy the container</b> button. It will take a while to start it, be patient.
+
+## connecting to the vpn:
+In your PC (I'm assuming you are using linux debian-like distro) go to terminal and run the command:
+```
+sudo apt-get install wireguard resolvconf -y
+```
+It will install wireguard on your computer and now we only need the configuration file. 
+--- coming soon ---
