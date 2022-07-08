@@ -20,7 +20,7 @@ This setup will cover:
   * description of issues that occured during the setup
 * :arrow_right: [docker setup](https://github.com/btk44/raspberrypi-server/tree/main/docker-setup)
   * installing docker
-  * installing docker containers: portainer, nextcloud, wireguard, samba - using docker-compose and installing with portainer
+  * installing docker containers: portainer, nextcloud, wireguard
   * setting up a custom bridge network to access containers only through VPN connection
   * installing wireguard client on ubuntu/debian and connecting to the server
   * description of issues that occured during the setup
