@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  samba:
+    image: dperson/samba
+    container_name: rpi-samba
+    command: -u "myuser;pass" -s "shared_folder_name;/share;yes;no;yes;user_name"
+    volumes:
+      - /path_to_directory_you_want_to_share:/share
+    environment:
+      - TZ=Europe/Berlin
+      - WORKGROUP=rpi
+      - USERID=1000
+      - GROUPID=1000
+    restart: unless-stopped
+networks:
+  default:
+    name: vpn-network
+    external: true
+
