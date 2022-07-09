@@ -106,5 +106,26 @@ In your PC (I'm assuming you are using linux debian-like distro) go to terminal 
 ```
 sudo apt-get install wireguard resolvconf -y
 ```
-It will install wireguard on your computer and now we only need the configuration file. 
+It will install wireguard on your computer and now we only need the configuration file. To get it we need to ssh to our RPi. Open terminal / cmd and run these commands:
+```
+ssh your_username_from_imager_settings@your_hostname_from_imager_settings
+--- enter password ---
+cd /path/to/wireguard/config <---- the one you set up in wireguard docker compose file
+cat peer1/peer1.conf
+```
+This should return the content of the configuration file. Now we need to copy that and save to /etc/wireguard/ directory in our PC. Let's name it `vpn-wg.conf`.
+Make sure the file `/etc/wireguard/vpn-wg.conf` exists. Now run the command (in new terminal):
+```
+sudo wg-quick up vpn-wg
+```
+To see if it worked go back to ssh terminal and run command:
+```
+docker exec -it wireguard_container_name wg
+```
+This should list all the peers and the time of the latest handshake. I case you'd like to disconnect just run: 
+```
+sudo wg-quick down vpn-wg
+```
+
+If the connection was successful you should be able to access all other containers.
 --- coming soon ---
