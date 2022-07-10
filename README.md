@@ -33,4 +33,4 @@ It may seem that home server would be easy to set up and will work like cloud st
 * when RPi was connected via cable to my router some other devices in my network (1 PC, 1 phone and a printer) had issues with wifi connection
 * my RPi cannot power 2x2.5 drives connected via USB (no matter which ones) - it was causing errors and I needed to reboot the system. I have only one ssd disk (with the system) connected and the rest is connected via USB hub with external power supply.
 
-July 09 2022 - to be continued... tomorrow 😉
+to be continued... July 15th 😉
