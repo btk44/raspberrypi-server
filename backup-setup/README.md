@@ -28,4 +28,9 @@ The file handles mounting the external drive, making a backup and umounting the 
 * backup log - path to log file where you can read the command output
 
 ## crontab:
---- comin soon ---
+I strongly recommend reading at least one crontab tutorial to be familiar with time options. The format of crontab line looks like this:
+```
+* * * * * command_ro_run
+```
+where each `*` represents time unit. To make it easier you can try out your options here [crontab guru](https://crontab.guru). 
+
