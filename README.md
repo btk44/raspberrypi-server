@@ -1,3 +1,5 @@
+## --- documentation in progress --- to be continued... July 15th 😉
+
 ## Simple home server with Raspberry Pi and Docker
 
 The goal of this project is to prepare a home server using Raspberry Pi 4B computer. I decided to run everything using docker so all the apps I would use there would be contenerized (self-hosted). The server will have two disks - one for the operating system and keeping data and the second just for making backup. 
@@ -31,6 +33,4 @@ It may seem that home server would be easy to set up and will work like cloud st
 * server speed depends on your internet connection (upload and download speeds) - remember that
 * RPi transfer is faster via cable than wifi 
 * when RPi was connected via cable to my router some other devices in my network (1 PC, 1 phone and a printer) had issues with wifi connection
-* my RPi cannot power 2x2.5 drives connected via USB (no matter which ones) - it was causing errors and I needed to reboot the system. I have only one ssd disk (with the system) connected and the rest is connected via USB hub with external power supply.
-
-to be continued... July 15th 😉
+* my RPi cannot power 2x2.5" (one ssd and one hdd) drives connected via USB (no matter where if usb2 or usb3) - it was causing errors and I needed to reboot the system. I have only one ssd disk (with the system) connected and the rest is connected via USB hub with external power supply.
