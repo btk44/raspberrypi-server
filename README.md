@@ -33,4 +33,4 @@ It may seem that home server would be easy to set up and will work like cloud st
 * server speed depends on your internet connection (upload and download speeds) - remember that
 * RPi transfer is faster via cable than wifi 
 * when RPi was connected via cable to my router some other devices in my network (1 PC, 1 phone and a printer) had issues with wifi connection
-* my RPi cannot power 2x2.5" (one ssd and one hdd) drives connected via USB (no matter where if usb2 or usb3) - it was causing errors and I needed to reboot the system. I have only one ssd disk (with the system) connected and the rest is connected via USB hub with external power supply.
+* my RPi cannot power 2x2.5" (one ssd and one hdd) drives connected via USB (no matter if usb2 or usb3) - it was causing errors and I needed to reboot the system. I have only one ssd disk (with the system) connected and the rest is connected via USB hub with external power supply.
