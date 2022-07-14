@@ -1,4 +1,4 @@
-## --- documentation in progress --- to be continued... July 15th 😉
+ --- documentation in progress --- to be continued... July 15th 😉
 
 ## Simple home server with Raspberry Pi and Docker
 
