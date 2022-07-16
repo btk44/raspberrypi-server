@@ -7,16 +7,16 @@ services:
       - NET_ADMIN
       - SYS_MODULE
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/Berlin
-      - SERVERURL=url.to.ddns.org #optional
+      - PUID=1000 # use 'whoami' and 'id your_user_name_from_whoami' 
+      - PGID=1000 # same as above
+      - TZ=Europe/Berlin # change to your timezone
+      - SERVERURL=127.0.0.1 # change it to your RPi ip or name, i.e. 192.168.1.10 / rpi-server / ddns address (if visible outside)
       - SERVERPORT=51820 #optional
-      - PEERS=4 #optional
+      - PEERS=4 # change to the number of certs you want
       - PEERDNS=auto #optional
       - INTERNAL_SUBNET=10.13.13.0 #optional
     volumes:
-      - /host/path/to/wireguard/config:/config
+      - /home/bk/docker-data/rpi-wireguard/config:/config # change path before ':'
       - /lib/modules:/lib/modules
     ports:
       - 51820:51820/udp
