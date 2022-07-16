@@ -5,12 +5,12 @@ services:
     image: lscr.io/linuxserver/nextcloud:latest
     container_name: rpi-nextcloud
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/Berlin
+      - PUID=1000   # use 'whoami' and 'id your_user_name_from_whoami' 
+      - PGID=1000   # same as above
+      - TZ=Europe/Berlin  # change to your timezone
     volumes:
-      - /host/path/to/config:/config
-      - /host/path/to/data:/data
+      - /home/bk/docker-data/rpi-ncp/config:/config  # change path before ':'
+      - /home/bk/docker-data/rpi-ncp/data:/data     # change path before ':'
     restart: unless-stopped
     depends_on:
       - nextcloud_db
@@ -18,15 +18,15 @@ services:
     image: lscr.io/linuxserver/mariadb:latest
     container_name: rpi-nextcloud-db
     environment:
-      - PUID=1000
-      - PGID=1000
-      - MYSQL_ROOT_PASSWORD=<root pass>
-      - TZ=Europe/Berlin
-      - MYSQL_DATABASE=<db name>
-      - MYSQL_USER=<user>
-      - MYSQL_PASSWORD=<password>
+      - PUID=1000 # see PUID and PGID above
+      - PGID=1000 # same as above
+      - MYSQL_ROOT_PASSWORD=rootpass # change it
+      - TZ=Europe/Berlin  # chnge to your timezone
+      - MYSQL_DATABASE=ncpdb # change it
+      - MYSQL_USER=ncpuser # change it
+      - MYSQL_PASSWORD=mysqlpass # change it
     volumes:
-      - /host/path/to/db:/config
+      - /home/bk/docker-data/rpi-ncp/db:/config  # change path before ':'
     restart: unless-stopped
 networks:
   default:
