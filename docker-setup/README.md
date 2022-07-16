@@ -144,4 +144,13 @@ sudo wg-quick down vpn-wg
 ```
 
 If the connection was successful you should be able to access all other containers.
---- coming soon ---
+
+### :small_blue_diamond: accessing containers
+![image](https://user-images.githubusercontent.com/97596263/179358747-4d44960d-04ba-4323-8e01-192f8c326aa0.png)
+
+After connecting to vpn you should be able to access containers by their names:
+* portainer :arrow_right: go to `http://portainer:9000/`
+* nextcloud :arrow_right: go to `https://rpi-nextcloud/` - you may be asked to accept certificate risk
+* samba  :arrow_right: go to file manager (nautilus in my case) and click <b>Other locations</b>. Then in address bar type `smb://rpi-samba/`. Then a pop-up should be shown where you have to provide username and password to access files.
+
+## issues and troubleshooting
