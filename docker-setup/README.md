@@ -3,37 +3,44 @@
 * Note: This setup was inspired by pi-hosted project - if you're interested in more RPi self-hosted apps - check it out
 
 ## files:
-### install_docker.sh
+### :small_blue_diamond: install_docker.sh
 Run the script to install docker on your RPi. Remember to reboot/logout after running it to apply user group assignments.
 ```
 ./install_docker.sh
 ```
 
-### install_portainer.sh and update_portainer.sh
+### :small_blue_diamond: install_portainer.sh and update_portainer.sh
 Run scripts to install or update portainer on your RPi:
 ```
 ./install_portainer.sh
-./update_portainer.sh
 ```
 
 After this you should be able to access portainer through your web browser (from other computer in your local network). Go to:
 ```
 http://your_hostname_from_settings:9000/ or http://your_RPi_ip_address:9000/
 ```
+
+In case portainer shows notifications about a new version run:
+```
+./update_portainer.sh
+```
+
 ## creating and running containers:
 
-### docker-compose
+### :small_blue_diamond: docker-compose
 To be able to install containers via compose files run command:
 ```
 sudo apt-get install docker-compose -y
 ```
-### setup custom bridge network
+### :small_blue_diamond: setup custom bridge network
 Before running containers creation you need to create custom bridge network. To keep it simple run:
 ```
 docker network create --driver=bridge vpn-network
 ```
+### :small_blue_diamond: current containers configuration
+All containers compose files are set up for a test account on my RPi. The RPi user's name is `bk`. After running all compose files a new directory will be created in `/home/bk` named `docker-data`. 
 
-### wireguard
+### :small_blue_diamond: wireguard
 Go to wireguard directory and edit docker-compose.yml (use vim or nano):
 ```
 cd wireguard
@@ -49,7 +56,7 @@ id your_user_name -> this will list you UID and GID
 * TZ -> your timezone
 * SERVERURL -> if you want the server acessible via local network only then use your RPi local ip address (192.168.?.?), if from outside use your external ip or ddns url (this requires router port forwarding and setting up ddns if your external ip is changing - more on that later?)
 * PEERS -> the number of certificates for clients you want to generate
-* in volume section replace `/host/path/to/wireguard/config` with path you want to use to store configuration (client certs will be there), i.e. `/home/your_user_name/wireguard/config`
+* in volume section replace `/home/bk/docker-data/rpi-wireguard/config` with path you want to use to store configuration (client certs will be there), i.e. `/home/your_user_name/wireguard/config`
 
 Now go to terminal and enter command:
 ```
@@ -57,18 +64,18 @@ docker-compose up -d
 ```
 The container should be up and running and in the config directory you provided you should find client certificates (peer1, peer2, etc.). You can check if container is up through portainer web interface.
 
-### nextcloud
+### :small_blue_diamond: nextcloud
 Go to nextcloud directory and edit docker-compose.yml (use vim or nano):
 ```
 cd nextcloud
 nano docker-compose.yml
 ```
 Set values:
-* container_name -> put your container name. This will be used to access nextcloud via browser, i.e. `https://my_nextcloud_container_name/`
+* container_name -> put your container name. This will be used to access nextcloud via browser, i.e. `https://rpi-nextcloud/`
 * PUID, PGID and TZ should be filled like in wireguard container
-* in volumes section replace `/host/path/to/config` and `/host/path/to/data` with paths you want to use. Data path is the directory where all your files will be stored. (-- add troubleshooting with .ocdata file --)
+* in volumes section replace `/home/bk/docker-data/rpi-ncp/config` and `/home/bk/docker-data/rpi-ncp/data` with paths you want to use. Data path is the directory where all your files will be stored. (-- add troubleshooting with .ocdata file --)
 * set values for: `MYSQL_ROOT_PASSWORD`, `MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD` - they will be needed when you first run nextcloud in browser and you will connect to the database
-* in volumes section replace `/host/path/to/db` with correct path you want to store db
+* in volumes section replace `/home/bk/docker-data/rpi-ncp/db` with correct path you want to store db
 
 Important note! There are no ports exposed for the nextcloud - it is made on purpose because we want to access the container directly from custom network that will be accessible through VPN connection.
 
@@ -77,18 +84,27 @@ Now go to terminal and enter command:
 docker-compose up -d
 ```
 
-### samba
-This container will be installed using portainer to see how we can make setup manually.
+### :small_blue_diamond: samba
+This container will be installed using portainer to see how we can make setup manually (you can also use docker-compose file if you want to skip portainer).
 In your webbrowser go to:
 ```
 http://your_hostname_from_settings:9000/ or http://your_RPi_ip_address:9000/
 ```
-On the left menu click <b>Home</b>. You should see list of environments. Select <b>local</b> environment. Then click on <b>containers</b> - this should take you to the list of all containers that are running in your docker. In left panel menu select <b>Settings</b> and after the page is loaded in <b>App Templates</b> section paste this url:
+On the left menu click <b>Home</b>. You should see list of environments. Select <b>local</b> environment. Then click on <b>containers</b> - this should take you to the list of all containers that are running in your docker. In left panel menu select <b>Settings</b>. 
+![image](https://user-images.githubusercontent.com/97596263/179357868-4593528b-30c3-427c-af52-6629b20a2239.png)
+
+
+After the page is loaded in <b>App Templates</b> section paste this url:
 ```
 https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/template/portainer-v2-arm64.json
 ```
-This is a link from [pi-hosted](https://github.com/novaspirit/pi-hosted) repository that will provide ready container templates ready for deployment. Click <b>Save settings</b> and now go to App Templates (in left panel menu). You can read the list of available containers there, but for now type <b>samba</b> in the search field. Then select the template that will show up - this should take you to setup screen:
-![image](https://user-images.githubusercontent.com/97596263/177945212-fbab260d-2369-4d46-9e14-40513f8bf9a9.png)
+![image](https://user-images.githubusercontent.com/97596263/179358002-88369e19-cf32-47ce-91e9-23df45a26630.png)
+
+This is a link from [pi-hosted](https://github.com/novaspirit/pi-hosted) repository that will provide ready container templates ready for deployment. Click <b>Save settings</b> and now go to App Templates (in left panel menu). You can read the list of available containers there, but for now type <b>samba</b> in the search field. 
+![image](https://user-images.githubusercontent.com/97596263/179358095-e5933ac6-d865-4f01-a71f-8c4afc54eeb4.png)
+
+Then select the template that will show up - this should take you to setup screen:
+![image](https://user-images.githubusercontent.com/97596263/179358268-f78830d9-0da4-465a-961b-21aca98f66d7.png)
 
 Now you need to configure it:
 * Name: put your container name here i.e. rpi-samba
