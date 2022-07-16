@@ -154,3 +154,7 @@ After connecting to vpn you should be able to access containers by their names:
 * samba  :arrow_right: go to file manager (nautilus in my case) and click <b>Other locations</b>. Then in address bar type `smb://rpi-samba/`. Then a pop-up should be shown where you have to provide username and password to access files.
 
 ## issues and troubleshooting
+--- coming soon ---
+
+
+(portainer not run, etc.)
