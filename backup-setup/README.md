@@ -41,6 +41,18 @@ crontab -e
 ```
 You will be prompted with text editor selection. Just pick the one you like and when the file is opened just paste `crontap_file` content with correct directories that will point to `backup_action.sh` file. Save and it is done.
 
+## :small_orange_diamond: fstab:
+If you want to have your disks automatically mounted after reboot there are two options:
+* use crontab line: `@reboot sudo mount UUID=your_disk_uuid` - uuid can be checked with `blkid` command
+* use fstab by adding a line from `fstab_sample_entry_for_auto_mount` file to /etc/fstab 
+  * remember that each value has to be separated with `TAB`
+  * you have to put correct UUID of your drive and file system (vfat, ntfs, ext4) - see `blkid` command
+  * create mounting point first! so it will exist when mounting will take place
+  * use auto and nofail flags! nofail is the most important because the system will not boot if your disk is absent or mounting will go wrong
+
+I decided to use crontab and `backup_action.sh` script so my backup drive will be mounted when needed only. Then it is umounted so it can be safely unplugged at any time without data loss.
+
 ## :small_orange_diamond: issues and troubleshooting
 Here's a list of problems I've encountered (the list will be updated if I find sth new):
 * be careful with directories here - if your backup doesn't work be sure to check them and remember about '/' at the end
+* if your going to unplug backup drive sometimes then remember to umount it - this will prevent data loss
