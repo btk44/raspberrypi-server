@@ -1,5 +1,5 @@
 # System preparation
-### installing operating system:
+## :small_orange_diamond: installing operating system:
 For the installation use Raspberry Pi Imager available here: [link](https://www.raspberrypi.com/software/).
 It lets choose OS you want and setup some general options like hostname, user, wifi connection, SSH, etc. After running Imager on your machine (not RPi):
 * select Raspbery Pi OS (other) -> Raspberry Pi OS Lite (64-bit)
@@ -19,15 +19,15 @@ Now turn on your RPi and let it boot (it may take some time). To connect via SSH
 
 Done!
 
-## files:
+## :small_orange_diamond: files:
 
-### 01-system-setup.sh 
+### :small_blue_diamond: 01-system-setup.sh 
 Run script to update apt and install git and vim
 ```
 sh 01-system-setup.sh
 ```
 
-### 02-repos-git-pull.sh
+### :small_blue_diamond: 02-repos-git-pull.sh
 Run script to download repositories:
 * [pi-histed](https://github.com/novaspirit/pi-hosted) - I strongly recommend to get familiar with it. This repository and building home server with RPi and docker was inspired by pi-hosted
 * [fanshim](https://learn.pimoroni.com/article/getting-started-with-fan-shim) - it is needed only if you have Pimoroni Fan installed on your RPi
@@ -36,16 +36,16 @@ Run script to download repositories:
 sh 02-repos-git-pull.sh
 ```
 
-### 03-fan-install.sh
+### :small_blue_diamond: 03-fan-install.sh
 Run script to install Pimoroni Fan service - if you're using the same fan
 
 ```
 sh 03-fan-install.sh
 ```
 
-Now go to: [docker-setup](https://github.com/btk44/raspberrypi-server/tree/main/docker-setup)
+:arrow_right: Now go to: [docker-setup](https://github.com/btk44/raspberrypi-server/tree/main/docker-setup)
 
-## Issues and troubleshooting:
+## :small_orange_diamond: Issues and troubleshooting:
 Here's a list of problems I've encountered (the list will be updated if I find sth new):
 * sometimes during the first RPi boot from external drive - it took a little longer to get it running. It looked like RPi was rebooting again for some reason. But after that it worked ok
 * I decided to use external ssd drive instead of a ssd card because of bad opinions about it. It looks like they like to break quite often
