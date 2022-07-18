@@ -2,7 +2,7 @@
 * Note: This is the second step. For initial system setup go to: [server-setup](https://github.com/btk44/raspberrypi-server/tree/main/server-setup).
 * Note: This setup was inspired by pi-hosted project - if you're interested in more RPi self-hosted apps - check it out
 
-## files:
+## :small_orange_diamond: files:
 ### :small_blue_diamond: install_docker.sh
 Run the script to install docker on your RPi. Remember to reboot/logout after running it to apply user group assignments.
 ```
@@ -25,7 +25,7 @@ In case portainer shows notifications about a new version run:
 ./update_portainer.sh
 ```
 
-## creating and running containers:
+## :small_orange_diamond: creating and running containers:
 
 ### :small_blue_diamond: docker-compose
 To be able to install containers via compose files run command:
@@ -73,7 +73,7 @@ nano docker-compose.yml
 Set values:
 * container_name -> put your container name. This will be used to access nextcloud via browser, i.e. `https://rpi-nextcloud/`
 * PUID, PGID and TZ should be filled like in wireguard container
-* in volumes section replace `/home/bk/docker-data/rpi-ncp/config` and `/home/bk/docker-data/rpi-ncp/data` with paths you want to use. Data path is the directory where all your files will be stored. (-- add troubleshooting with .ocdata file --)
+* in volumes section replace `/home/bk/docker-data/rpi-ncp/config` and `/home/bk/docker-data/rpi-ncp/data` with paths you want to use. Data path is the directory where all your files will be stored.
 * set values for: `MYSQL_ROOT_PASSWORD`, `MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD` - they will be needed when you first run nextcloud in browser and you will connect to the database
 * in volumes section replace `/home/bk/docker-data/rpi-ncp/db` with correct path you want to store db
 
@@ -117,7 +117,7 @@ Once it is done click on <b>Show advanced options</b> and remove all port mappin
 
 Now you can click <b>Deploy the container</b> button. It will take a while to start it, be patient.
 
-## connecting to the vpn:
+## :small_orange_diamond: connecting to the vpn:
 In your PC (I'm assuming you are using linux debian-like distro) go to terminal and run the command:
 ```
 sudo apt-get install wireguard resolvconf -y
@@ -153,8 +153,11 @@ After connecting to vpn you should be able to access containers by their names:
 * nextcloud :arrow_right: go to `https://rpi-nextcloud/` - you may be asked to accept certificate risk
 * samba  :arrow_right: go to file manager (nautilus in my case) and click <b>Other locations</b>. Then in address bar type `smb://rpi-samba/`. Then a pop-up should be shown where you have to provide username and password to access files.
 
-## issues and troubleshooting
---- coming soon ---
-
-
-(portainer not run, etc.)
+## :small_orange_diamond: issues and troubleshooting
+Here's a list of problems I've encountered (the list will be updated if I find sth new):
+* general:
+  * in most cases when portainer shows errors during installations or first run it is because you haven't rebooted RPi after installing docker
+  * if you can't find directory that should be created after running docker-compose - look into docker-compose file and look at your setup - I had typos or missing '/' in directories like a 100 times
+* nextcloud:
+  * nextcloudpi, why not using it? I tried many times, but it was breaking all the time! It was working fine until I make any modification in portainer/docker (creating another container like samba or wireguard that whould not even affect nextcloudpi) - then the nexcloudpi was broken just because. That is why I used nextcloud - it has never broken.
+  * sometimes (i.e. when changing data directory) there is an error that there is a missing .ocdata file - to fix it go to the new data folder and create empty file with `touch .ocdata` - that should fix it
