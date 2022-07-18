@@ -44,3 +44,13 @@ sh 03-fan-install.sh
 ```
 
 Now go to: [docker-setup](https://github.com/btk44/raspberrypi-server/tree/main/docker-setup)
+
+## Issues and troubleshooting:
+Here's a list of problems I've encountered (the list will be updated if I find sth new):
+* sometimes during the first RPi boot from external drive - it took a little longer to get it running. It looked like RPi was rebooting again for some reason. But after that it worked ok
+* I decided to use external ssd drive instead of a ssd card because of bad opinions about it. It looks like they like to break quite often
+* the fan I used is always turned on when the server is powered off (but have power supply plugged in) - don't know yet if it can be fixed
+* when PRi is connected to my router via cable some of other devices in the wifi network have connection issues. Once RPi is connected via wifi - there are no issues
+* RPi has problems with powering more than one 2.5" ssd/hdd disk via USB ports - if you want to have more disks consider using USB hub with power supply or kidn of disk docking station
+* most of simple fans dedicated for PRi have only 2 pins - this means that they will run forever and cannot be controlled - look for 3-pin fan or consider using transistor and add 3rd pin on your own
+
