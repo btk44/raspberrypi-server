@@ -29,7 +29,7 @@ sh 01-system-setup.sh
 
 ### :small_blue_diamond: 02-repos-git-pull.sh
 Run script to download repositories:
-* [pi-histed](https://github.com/novaspirit/pi-hosted) - I strongly recommend to get familiar with it. This repository and building home server with RPi and docker was inspired by pi-hosted
+* [pi-hosted](https://github.com/novaspirit/pi-hosted) - I strongly recommend to get familiar with it. This repository and building home server with RPi and docker was inspired by pi-hosted
 * [fanshim](https://learn.pimoroni.com/article/getting-started-with-fan-shim) - it is needed only if you have Pimoroni Fan installed on your RPi
 
 ```
