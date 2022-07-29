@@ -161,3 +161,4 @@ Here's a list of problems I've encountered (the list will be updated if I find s
 * nextcloud:
   * nextcloudpi, why not using it? I tried many times, but it was breaking all the time! It was working fine until I make any modification in portainer/docker (creating another container like samba or wireguard that whould not even affect nextcloudpi) - then the nexcloudpi was broken just because. That is why I used nextcloud - it has never broken.
   * sometimes (i.e. when changing data directory) there is an error that there is a missing .ocdata file - to fix it go to the new data folder and create empty file with `touch .ocdata` - that should fix it
+  * sometimes when there are many files (i.e. photos) uploaded from nextcloud iphone app to the server - some of them fails - the pop up shows up after the transfer. It's good to note file names somewhere to retry for these failed ones.
