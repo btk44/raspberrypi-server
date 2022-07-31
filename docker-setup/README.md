@@ -158,7 +158,9 @@ Here's a list of problems I've encountered (the list will be updated if I find s
 * general:
   * in most cases when portainer shows errors during installations or first run it is because you haven't rebooted RPi after installing docker
   * if you can't find directory that should be created after running docker-compose - look into docker-compose file and look at your setup - I had typos or missing '/' in directories like a 100 times
-  * :exclamation: one time all my docker containers, images and volumes just dissapeared! There was only portainer left. I'm still trying to figure out what happened and how to restore them. No container data was lost - just docker stuff disappeard. :worried:
+  * :exclamation: one time all my docker containers, images and volumes just dissapeared! There was only portainer left. I'm still trying to figure out what happened and how to restore them. No container data was lost - just docker stuff disappeard. :worried: 
+     * I was able to restore containers by just running docker compose files
+     * still working on ability to call container by name in browser because it doesn't work now for some unknown reason
 * nextcloud:
   * nextcloudpi, why not using it? I tried many times, but it was breaking all the time! It was working fine until I make any modification in portainer/docker (creating another container like samba or wireguard that whould not even affect nextcloudpi) - then the nexcloudpi was broken just because. That is why I used nextcloud - it has never broken.
   * sometimes (i.e. when changing data directory) there is an error that there is a missing .ocdata file - to fix it go to the new data folder and create empty file with `touch .ocdata` - that should fix it
