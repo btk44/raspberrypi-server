@@ -4,6 +4,7 @@ services:
   samba:
     image: dperson/samba
     container_name: rpi-samba
+    hostname: rpi-samba
     command: -u "bk-user;pass" -s "/home/bk;/share;yes;no;yes;bk-user" # chnage user name (bk-user), password (pass) and /home/bk path to directory you want to share with samba 
     volumes:
       - /home/bk:/share # chnage /home/bk path to directory you want to share with samba (same as in 'command') 
