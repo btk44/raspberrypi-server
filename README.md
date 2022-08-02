@@ -28,8 +28,8 @@ This setup will cover:
   * installing docker containers: portainer, nextcloud, wireguard, samba (docker-compose and using portainer)
   * setting up a custom bridge network to access containers only through VPN connection
   * installing wireguard client on ubuntu/debian and connecting to the server
+  * setting up custom stack template to run compose files from portainer
   * description of issues that occured during the setup
-  * bonus: setting up custom stack template to run compose files from portainer --- soon ---
 * :arrow_right: [backup setup](https://github.com/btk44/raspberrypi-server/tree/main/backup-setup)
   * setting up automatic backup using crontab and rsync (+ fstab mounting option)
   * description of issues that occured during the usage
