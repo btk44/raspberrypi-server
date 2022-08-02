@@ -154,7 +154,7 @@ After connecting to vpn you should be able to access containers by their names:
 * samba  :arrow_right: go to file manager (nautilus in my case) and click <b>Other locations</b>. Then in address bar type `smb://rpi-samba/`. Then a pop-up should be shown where you have to provide username and password to access files.
 
 
-## :small_orange_diamond: creating stack template in portainer
+## creating stack template in portainer
 Instead of running docker-compose command in terminal we can use portainer custom templates to create containers with button click. To do it go to Custom Templates in the left panel menu:
 
 ![image](https://user-images.githubusercontent.com/97596263/182359689-ee16b8b2-9370-416c-a508-766e74874755.png)
