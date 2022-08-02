@@ -58,7 +58,7 @@ id your_user_name -> this will list you UID and GID
 * PEERS -> the number of certificates for clients you want to generate
 * in volume section replace `/home/bk/docker-data/rpi-wireguard/config` with path you want to use to store configuration (client certs will be there), i.e. `/home/your_user_name/wireguard/config`
 
-Now go to terminal and enter command:
+Now go to terminal and enter command (alternative way is using [custom template in portainer](https://github.com/btk44/raspberrypi-server/edit/main/docker-setup/README.md#small_orange_diamond-creating-stack-template-in-portainer)):
 ```
 docker-compose up -d
 ```
@@ -79,7 +79,7 @@ Set values:
 
 Important note! There are no ports exposed for the nextcloud - it is made on purpose because we want to access the container directly from custom network that will be accessible through VPN connection.
 
-Now go to terminal and enter command:
+Now go to terminal and enter command (alternative way is using [custom template in portainer](https://github.com/btk44/raspberrypi-server/edit/main/docker-setup/README.md#small_orange_diamond-creating-stack-template-in-portainer)):
 ```
 docker-compose up -d
 ```
@@ -152,6 +152,23 @@ After connecting to vpn you should be able to access containers by their names:
 * portainer :arrow_right: go to `http://portainer:9000/`
 * nextcloud :arrow_right: go to `https://rpi-nextcloud/` - you may be asked to accept certificate risk
 * samba  :arrow_right: go to file manager (nautilus in my case) and click <b>Other locations</b>. Then in address bar type `smb://rpi-samba/`. Then a pop-up should be shown where you have to provide username and password to access files.
+
+
+## :small_orange_diamond: creating stack template in portainer
+Instead of running docker-compose command in terminal we can use portainer custom templates to create containers with button click. To do it go to Custom Templates in the left panel menu:
+
+![image](https://user-images.githubusercontent.com/97596263/182359689-ee16b8b2-9370-416c-a508-766e74874755.png)
+
+After page is loaded hit "+ Add Custom Template" button and you should see following screen:
+![image](https://user-images.githubusercontent.com/97596263/182360046-2a7f8fa6-823f-410a-aa87-d5219c0bc147.png)
+
+Fill the name of the template and description - it can be anything. Then paste docker compose file content in the field at the bottom. Remember to edit parameters before saving if you haven't before pasting. Once it is done click "Create custom template" button at the bottom. Done!
+Now you should see your template on the list:
+![image](https://user-images.githubusercontent.com/97596263/182360620-de0f1a17-649d-4397-99c1-fdd9e455053f.png)
+
+When you select one you can easily deploy it with a button click:
+![image](https://user-images.githubusercontent.com/97596263/182360753-b97b4e10-b777-4c1b-8186-378c52712ccf.png)
+
 
 ## :small_orange_diamond: issues and troubleshooting
 Here's a list of problems I've encountered (the list will be updated if I find sth new):
