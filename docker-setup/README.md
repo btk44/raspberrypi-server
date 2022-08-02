@@ -58,7 +58,7 @@ id your_user_name -> this will list you UID and GID
 * PEERS -> the number of certificates for clients you want to generate
 * in volume section replace `/home/bk/docker-data/rpi-wireguard/config` with path you want to use to store configuration (client certs will be there), i.e. `/home/your_user_name/wireguard/config`
 
-Now go to terminal and enter command (alternative way is using [custom template in portainer](https://github.com/btk44/raspberrypi-server/tree/main/docker-setup#small_orange_diamond-creating-stack-template-in-portainer)):
+Now go to terminal and enter command (alternative way is using [custom template in portainer](https://github.com/btk44/raspberrypi-server/tree/main/docker-setup#creating-stack-template-in-portainer)):
 ```
 docker-compose up -d
 ```
@@ -79,7 +79,7 @@ Set values:
 
 Important note! There are no ports exposed for the nextcloud - it is made on purpose because we want to access the container directly from custom network that will be accessible through VPN connection.
 
-Now go to terminal and enter command (alternative way is using [custom template in portainer](https://github.com/btk44/raspberrypi-server/tree/main/docker-setup#small_orange_diamond-creating-stack-template-in-portainer)):
+Now go to terminal and enter command (alternative way is using [custom template in portainer](https://github.com/btk44/raspberrypi-server/tree/main/docker-setup#creating-stack-template-in-portainer)):
 ```
 docker-compose up -d
 ```
