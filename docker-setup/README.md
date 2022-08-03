@@ -175,7 +175,7 @@ Here's a list of problems I've encountered (the list will be updated if I find s
 * general:
   * in most cases when portainer shows errors during installations or first run it is because you haven't rebooted RPi after installing docker
   * if you can't find directory that should be created after running docker-compose - look into docker-compose file and look at your setup - I had typos or missing '/' in directories like a 100 times
-  * :exclamation::exclamation::exclamation: one time all my docker containers, images and volumes just dissapeared! There was only portainer left. I'm still trying to figure out what happened. No container data was lost - just docker stuff disappeard. :worried: 
+  * :exclamation::exclamation: one time all my docker containers, images and volumes just dissapeared (overnight - not even rebooted?)! There was only portainer left. I'm still trying to figure out what happened. No container data was lost - just docker stuff disappeard. :worried: 
      * I was able to restore containers by just running docker compose files and containers used exisitng data that wasn't lost
      * calling containers by name (instead of internal net ip) stopped working but I have fixed it by adding hostname field in compose files - now it is back again
      * still don't know what caused the issue
