@@ -33,3 +33,12 @@ This setup will cover:
 * :arrow_right: [backup setup](https://github.com/btk44/raspberrypi-server/tree/main/backup-setup)
   * setting up automatic backup using crontab and rsync (+ fstab mounting option)
   * description of issues that occured during the usage
+
+## Additional notes:
+
+This setup does not include port forwarding setup because it looks different for each router sorftware. In case you're new to port forwarding start with:
+* finding what is the ip address for managing your router, usually it is something like 192.168.1.1 
+* once you accessed router management look for advanced network settings and NAT
+* figure out if you have static or dynamic external ip address (I guess checking ip before and after router reebot may help you)
+  * if static - just forward your port
+  * if dynamic - search the web for free DDNS providers that will offer you human readable address pointing to your ip (it may require setting DDNS in your router management)
