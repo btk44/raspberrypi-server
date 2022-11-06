@@ -180,6 +180,7 @@ Here's a list of problems I've encountered (the list will be updated if I find s
      * calling containers by name (instead of internal net ip) stopped working but I have fixed it by adding hostname field in compose files - now it is back again
      * still don't know what caused the issue
      * there was also default shell language changed from bash to dash 
+  * :exclamation: vpn connection issues - if one day your vpn stopped connecting but the container seems fine - don't start troubleshooting in docker. In my case the issue lied in my internet operator - he changed my router to use IPv6 and port forwarding stopped working. I had to force IPv4 settings to fix it.  
 * nextcloud:
   * nextcloudpi, why not using it? I tried many times, but it was breaking all the time! It was working fine until I make any modification in portainer/docker (creating another container like samba or wireguard that whould not even affect nextcloudpi) - then the nexcloudpi was broken just because. That is why I used nextcloud - it has never broken.
   * sometimes (i.e. when changing data directory) there is an error that there is a missing .ocdata file - to fix it go to the new data folder and create empty file with `touch .ocdata` - that should fix it
