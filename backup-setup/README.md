@@ -56,4 +56,4 @@ I decided to use crontab and `backup_action.sh` script so my backup drive will b
 Here's a list of problems I've encountered (the list will be updated if I find sth new):
 * be careful with directories here - if your backup doesn't work be sure to check them and remember about '/' at the end
 * if your going to unplug backup drive sometimes then remember to umount it - this will prevent data loss
-* sometimes (in backup_action.sh) automatic mounting fails and I can't ssh into the server
+* sometimes (in backup_action.sh) automatic mounting fails and I can't ssh into the server. Consider mounting the backup drive once and leave it. You can always make another script to quickly umount it when needed 
