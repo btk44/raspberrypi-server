@@ -57,4 +57,4 @@ Here's a list of problems I've encountered (the list will be updated if I find s
 * be careful with directories here - if your backup doesn't work be sure to check them and remember about '/' at the end
 * if your going to unplug backup drive sometimes then remember to umount it - this will prevent data loss
 * sometimes (in backup_action.sh) automatic mounting fails and I can't ssh into the server. Consider mounting the backup drive once and leave it. You can always make another script to quickly umount it when needed 
-* backup.log quickly become very big - consider removing old lines once a while or make multiple files and remove very old ones?
+* backup.log quickly becomes very big - consider removing old lines once a while or make multiple files and remove very old ones?
