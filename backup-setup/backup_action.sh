@@ -9,7 +9,7 @@ now=$(date)
 
 echo "\n\n--------------------------------------------------------\nLog from date: $now :\n" >> $backup_log
 
-sudo mount UUID=$backup_drive_uuid $backup_drive_mount >> $backup_log
+sudo mount UUID=$backup_drive_uuid $backup_drive_mount >> $backup_log # this command sometimes fails (very rare) and bloks ssh
 sleep 30
 sudo rsync -avh --delete $backup_source $backup_target >> $backup_log 
 sudo umount $backup_drive_mount >> $backup_log
