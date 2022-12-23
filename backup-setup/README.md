@@ -29,6 +29,17 @@ The file handles mounting the external drive, making a backup and umounting the 
 
 Note: why the script is umounting the external drive? It is done because when I skipped this part and unplugged the drive sometimes I was loosing data. When it is umounted we can remove the drive any time.
 
+Note 2: now the script should be run with parameters because auto-mounting the disk crashed sometimes - it's probably better to keep it mounted
+
+Before you run backup run this command (mounting):
+```
+sh backup_action.sh m
+```
+Before you unplug the disk run command (umounting):
+```
+sh backup_action.sh u
+```
+
 ## :small_orange_diamond: crontab:
 I strongly recommend reading at least one crontab tutorial to be familiar with time options. The format of crontab line looks like this:
 ```
