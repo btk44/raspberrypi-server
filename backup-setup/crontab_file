@@ -1,5 +1,5 @@
 # backup every day at 00:00, 08:00, 16:00
 
-0 0 * * * sh /path/to/script/backup_action.sh
-0 8 * * * sh /path/to/script/backup_action.sh
-0 16 * * * sh /path/to/script/backup_action.sh
+0 0 * * * sh /path/to/script/backup_action.sh b
+0 8 * * * sh /path/to/script/backup_action.sh b
+0 16 * * * sh /path/to/script/backup_action.sh b
