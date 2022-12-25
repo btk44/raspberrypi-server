@@ -50,7 +50,7 @@ In `crontab_file` there are three lines that will run `backup_action.sh` script.
 ```
 crontab -e
 ```
-You will be prompted with text editor selection. Just pick the one you like and when the file is opened just paste `crontap_file` content with correct directories that will point to `backup_action.sh` file. Save and it is done.
+You will be prompted with text editor selection. Just pick the one you like and when the file is opened just paste `crontap_file` content with correct directories that will point to `backup_action.sh` file - remember to put `b` parameter! Save and it is done.
 
 ## :small_orange_diamond: fstab:
 If you want to have your disks automatically mounted after reboot there are two options:
