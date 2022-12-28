@@ -22,17 +22,17 @@ It may seem that home server would be easy to set up and will work like cloud st
 This setup will cover:
 * :arrow_right: [server setup](https://github.com/btk44/raspberrypi-server/tree/main/server-setup)
   * installing operating system and accessing it via ssh
-  * description of issues that occured during the setup
+  * [description of issues that occured during the setup](https://github.com/btk44/raspberrypi-server/tree/main/server-setup#small_orange_diamond-issues-and-troubleshooting)
 * :arrow_right: [docker setup](https://github.com/btk44/raspberrypi-server/tree/main/docker-setup)
   * installing docker
   * installing docker containers: portainer, nextcloud, wireguard, samba (docker-compose and using portainer)
   * setting up a custom bridge network to access containers only through VPN connection
   * installing wireguard client on ubuntu/debian and connecting to the server
   * setting up custom stack template to run compose files from portainer
-  * description of issues that occured during the setup
+  * [description of issues that occured during the setup](https://github.com/btk44/raspberrypi-server/tree/main/docker-setup#small_orange_diamond-issues-and-troubleshooting)
 * :arrow_right: [backup setup](https://github.com/btk44/raspberrypi-server/tree/main/backup-setup)
   * setting up automatic backup using crontab and rsync (+ fstab mounting option)
-  * description of issues that occured during the usage
+  * [description of issues that occured during the usage](https://github.com/btk44/raspberrypi-server/tree/main/backup-setup#small_orange_diamond-issues-and-troubleshooting)
 
 ## Additional notes:
 
