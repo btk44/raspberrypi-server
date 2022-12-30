@@ -54,7 +54,7 @@ whoami -> this will give you your_user_name
 id your_user_name -> this will list you UID and GID
 ```
 * TZ -> your timezone
-* SERVERURL -> if you want the server acessible via local network only then use your RPi local ip address (192.168.?.?), if from outside use your external ip or ddns url (this requires router port forwarding and setting up ddns if your external ip is changing - more on that later?)
+* SERVERURL -> if you want the server acessible via local network only then use your RPi local ip address (192.168.?.?), if from outside use your external ip or ddns url (this requires router port forwarding and setting up ddns if your external ip is changing - [little more here](https://github.com/btk44/raspberrypi-server#additional-notes))
 * PEERS -> the number of certificates for clients you want to generate
 * in volume section replace `/home/bk/docker-data/rpi-wireguard/config` with path you want to use to store configuration (client certs will be there), i.e. `/home/your_user_name/wireguard/config`
 
