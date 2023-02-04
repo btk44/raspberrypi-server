@@ -104,7 +104,7 @@ This is a link from [pi-hosted](https://github.com/novaspirit/pi-hosted) reposit
 ![image](https://user-images.githubusercontent.com/97596263/179358095-e5933ac6-d865-4f01-a71f-8c4afc54eeb4.png)
 
 Then select the template that will show up - this should take you to setup screen:
-![image](https://user-images.githubusercontent.com/97596263/179358268-f78830d9-0da4-465a-961b-21aca98f66d7.png)
+![image](https://user-images.githubusercontent.com/97596263/216778568-7c7c4a15-a52f-4de6-bcce-e630739d54e4.png)
 
 Now you need to configure it:
 * Name: put your container name here i.e. rpi-samba
@@ -116,6 +116,13 @@ Now you need to configure it:
 Once it is done click on <b>Show advanced options</b> and remove all port mappings (if you want to access container only through VPN). Next set the path to the directory that you want to share in <b>Volume mapping</b> host field.
 
 Now you can click <b>Deploy the container</b> button. It will take a while to start it, be patient.
+
+To access your shared folder in network you have to connect to your server using: 
+```
+smb://your_RPi_ip_address/shared-folder-name-inserted-in-SHARE-field
+or through vpn
+smb://samba-container-name/shared-folder-name-inserted-in-SHARE-field
+```
 
 ## :small_orange_diamond: connecting to the vpn:
 In your PC (I'm assuming you are using linux debian-like distro) go to terminal and run the command:
