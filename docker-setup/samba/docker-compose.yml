@@ -13,6 +13,9 @@ services:
       - WORKGROUP=rpi
       - USERID=1000 # use 'whoami' and 'id your_user_name_from_whoami' 
       - GROUPID=1000 # same as above
+    #ports:
+      #- 139:139
+      #- 445:445
     restart: unless-stopped
 networks:
   default:
