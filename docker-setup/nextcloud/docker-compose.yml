@@ -12,6 +12,8 @@ services:
     volumes:
       - /home/bk/docker-data/rpi-ncp/config:/config  # change path before ':'
       - /home/bk/docker-data/rpi-ncp/data:/data     # change path before ':'
+    #ports:
+      #- 8443:443
     restart: unless-stopped
     depends_on:
       - nextcloud_db
