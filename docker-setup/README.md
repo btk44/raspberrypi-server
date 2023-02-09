@@ -188,6 +188,7 @@ Here's a list of problems I've encountered (the list will be updated if I find s
      * still don't know what caused the issue
      * there was also default shell language changed from bash to dash 
   * :exclamation: vpn connection issues - if one day your vpn stopped connecting but the container seems fine - don't start troubleshooting in docker. In my case the issue lied in my internet operator - he changed my router to use IPv6 and port forwarding stopped working. I had to force IPv4 settings to fix it.  
+  * after some time chrome and firefox browsers stopped accepting container names as website urls. I don't know why, but to fix it I decided to try wirehole setup (wireguard + pi-hole + unbound) to be able to setup my own dns server and set pretty domain names for containers
 * nextcloud:
   * nextcloudpi, why not using it? I tried many times, but it was breaking all the time! It was working fine until I make any modification in portainer/docker (creating another container like samba or wireguard that whould not even affect nextcloudpi) - then the nexcloudpi was broken just because. That is why I used nextcloud - it has never broken.
   * sometimes (i.e. when changing data directory) there is an error that there is a missing .ocdata file - to fix it go to the new data folder and create empty file with `touch .ocdata` - that should fix it
