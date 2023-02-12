@@ -9,3 +9,4 @@ The new setup will contain following containers:
 * flame - just a pretty interface to keep all the links to other containers 
 * portainer - visual container management
 
+## Architecture diagram
