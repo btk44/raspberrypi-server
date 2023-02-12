@@ -10,3 +10,4 @@ The new setup will contain following containers:
 * portainer - visual container management
 
 ## Architecture diagram
+![arch](https://user-images.githubusercontent.com/97596263/218331678-180898c5-2033-4a4a-96bd-b8f29f186084.jpg)
