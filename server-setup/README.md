@@ -45,6 +45,33 @@ sh 03-fan-install.sh
 
 :arrow_right: Now go to: [docker-setup](https://github.com/btk44/raspberrypi-server/tree/main/docker-setup)
 
+## :small_orange_diamond: Installing network manager and updating the system (optional)
+Start with updating the system:
+```
+sudo apt update
+sudo apt full-upgrade
+sudo reboot
+```
+Then install network manager and go to raspi-config:
+```
+sudo apt install network-manager
+sudo raspi-config
+```
+Then go to Advanced Options -> Network Config -> pick Network Manager
+
+<img src="https://user-images.githubusercontent.com/97596263/219944455-b42818e5-cf65-419a-bfb6-6aa2aa4e0ee7.png" width="32%"/> <img src="https://user-images.githubusercontent.com/97596263/219944489-ccddc52a-ef78-40af-a7b2-b7b7234b23c1.png" width="32%"/> <img src="https://user-images.githubusercontent.com/97596263/219944493-365f84a8-4288-430d-909b-fa7aad960c35.png" width="32%"/>
+
+After that reboot the system:
+```
+sudo reboot
+```
+Once Pi is up find and connect to your wifi:
+```
+sudo iw wlan0 scan | grep SSID
+sudo nmcli --ask dev wifi connect <SSID>
+```
+
+
 ## :small_orange_diamond: Issues and troubleshooting:
 Here's a list of problems I've encountered (the list will be updated if I find sth new):
 * sometimes during the first RPi boot from external drive - it took a little longer to get it running. It looked like RPi was rebooting again for some reason. But after that it worked ok
@@ -54,4 +81,4 @@ Here's a list of problems I've encountered (the list will be updated if I find s
 * RPi has problems with powering more than one 2.5" ssd/hdd disk via USB ports - if you want to have more disks consider using USB hub with power supply or kind of disk docking station
   * even if you use additional power supply sometimes you may be forced to reboot RPi after plugging in the disk. In my case the disk was not found before the reboot (rare but it happend at least twice)
 * most of simple fans dedicated for PRi have only 2 pins - this means that they will run forever and cannot be controlled - look for 3-pin fan or consider using transistor and add 3rd pin on your own. Or you can go for passive cooling (radiator) - it makes no noise and give similar effects.
-
+* after some time of usage my Pi had problems with wifi connection - it was lost after 24 haours and there was no way to reconnect. Problem was solved after reboot but only for next 24 hours. I decided to update stystem and install network manager (see section above) - and now it works. 
