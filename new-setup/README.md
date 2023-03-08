@@ -2,7 +2,7 @@
 The new setup will contain following containers:
 * wireguard - vpn that will protect internal network 
 * pi-hole + unbound - filtering ads and dns setup with pretty domain names
-* nginx-proxy-manager - to provide certificates for containers that requires them
+* nginx-proxy-manager - to provide certificates for containers that requires them (self-signed in this case)
 * nextcloud - store files
 * bitwarden - store passwords
 * samba - for file share in the windows style
