@@ -81,4 +81,10 @@ Here's a list of problems I've encountered (the list will be updated if I find s
 * RPi has problems with powering more than one 2.5" ssd/hdd disk via USB ports - if you want to have more disks consider using USB hub with power supply or kind of disk docking station
   * even if you use additional power supply sometimes you may be forced to reboot RPi after plugging in the disk. In my case the disk was not found before the reboot (rare but it happend at least twice)
 * most of simple fans dedicated for PRi have only 2 pins - this means that they will run forever and cannot be controlled - look for 3-pin fan or consider using transistor and add 3rd pin on your own. Or you can go for passive cooling (radiator) - it makes no noise and give similar effects.
-* after some time of usage my Pi had problems with wifi connection - it was lost after 24 haours and there was no way to reconnect. Problem was solved after reboot but only for next 24 hours. I decided to update stystem and install network manager (see section above) - and now it works. 
+* after some time of usage my Pi had problems with wifi connection - it was lost after 24 haours and there was no way to reconnect. Problem was solved after reboot but only for next 24 hours. I decided to update stystem and install network manager (see section above) - and now it works.
+* modern routers sometimes tend to disconnect devices that are not actively using wifi connection so they may disconnect the pi - solution here is using a script that will be pinging the router and creating a crontab job that will execute the script every 10 minutes (example will be provided soon)
+* sometimes I get an error like:
+  ```
+  __ext4_find_entry:xxxx: inode #xxxxx: comm .... lblock 0
+  ```
+  and there is only hard reset possible. Unfortunately this means that there is something wrong with power supply (not enough power delivered) or external drive have some kind of power management and went to sleep mode - I have no solution for that except trying out other charger or other external disk and see if the problem occurs (try plugging the charger to other outlet in the wall - maybe there is something wrong with the one the pi is using)
